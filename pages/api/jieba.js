@@ -15,6 +15,7 @@ export default function handler(req, res) {
   }
   sentence = sentence || "";
   topN = topN || 30;
+  topN = +topN;
 
   const normalResult = nodejieba.extract(sentence, topN);
   const rankResult = nodejieba.textRankExtract(sentence, topN);
